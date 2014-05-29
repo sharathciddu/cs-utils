@@ -1,6 +1,6 @@
 #!/bin/bash 
 if [[ "$OSTYPE" == 'linux-gnu' ]]; then
-	service nscd restart
+	service nscd reload
 	service dnsmasq restart
 	rndc restart
 	echo "Flushed DNS cache on your Linux"
