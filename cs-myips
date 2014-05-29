@@ -1,0 +1,10 @@
+#!/bin/bash          
+externalIPaddress=`curl -s icanhazip.com`
+echo ""
+echo -e "\033[32mExternal IPAddress:"
+echo $externalIPaddress
+echo ""
+internalIPaddresses=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*'`
+echo -e "\033[39mInternal IPAddresses:" 
+echo $internalIPaddresses
+echo ""
